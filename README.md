@@ -1,3 +1,3 @@
-# C Sharp Projects - Class
+# C Sharp Projects - Class Programming Languages
 
-by Manuel Morales
+By Manuel Morales
