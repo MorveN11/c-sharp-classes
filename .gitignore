@@ -1,6 +1,6 @@
 # Outputs
-/bin
-/obj
+bin/
+obj/
 
-# Vscode
+# Visual Studio Code
 .vscode/
