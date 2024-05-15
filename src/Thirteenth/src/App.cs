@@ -58,22 +58,17 @@ public class App
         }
     }
 
-    static void Multiply(out int product, int factorX, int factorY)
+    static void Multiply(out int product, int a, int b)
     {
-        bool sign = false;
-
-        if (!(factorX < 0 && factorY < 0) && (factorX < 0 || factorY < 0))
-        {
-            sign = true;
-        }
+        bool sign = !(a < 0 && b < 0) && (a < 0 || b < 0);
 
         product = 0;
-        factorX = Math.Abs(factorX);
-        factorY = Math.Abs(factorY);
+        a = Math.Abs(a);
+        b = Math.Abs(b);
 
-        for (int i = 0; i < factorY; i = Sum(i, 1))
+        for (int i = 0; i < b; i = Sum(i, 1))
         {
-            product = Sum(product, factorX);
+            product = Sum(product, a);
         }
 
         if (sign)
