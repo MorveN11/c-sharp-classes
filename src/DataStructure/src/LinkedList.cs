@@ -7,13 +7,14 @@ namespace DataStructure
         private Node<T>? _head;
         private Node<T>? _current;
 
+#pragma warning disable CS8603
         public T Current
         {
             get
             {
                 if (_current == null)
                 {
-                    throw new IndexOutOfRangeException();
+                    return default;
                 }
 
                 return _current.Value;
@@ -22,16 +23,9 @@ namespace DataStructure
 
         object IEnumerator.Current
         {
-            get
-            {
-                if (Current == null)
-                {
-                    throw new IndexOutOfRangeException();
-                }
-
-                return Current;
-            }
+            get { return Current; }
         }
+#pragma warning restore CS8603
 
         public bool MoveNext()
         {
@@ -52,7 +46,11 @@ namespace DataStructure
             _current = null;
         }
 
-        public void Dispose() { }
+        public void Dispose()
+        {
+            _current?.Dispose();
+            _head?.Dispose();
+        }
 
         public IEnumerator<T> GetEnumerator()
         {
