@@ -1,0 +1,17 @@
+<arithmetic-operation> ::= <operand> <operator> <operand>
+<operand> ::= <airthmetic-operation> | <digit>
+<operator> ::= + | - | * | /
+<digit> ::= 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+  +         |         <airthmetic-operation>
+ / \        |          /         |         \
+1   *       |     <operand> <operator>  <operand>
+   / \      |       |            |            |
+  2   3     |    <digit>         +   <airthmetic-operation>
+                    |                       /   |   \
+                    1                      /    |    \
+                                          /     |     \
+                                 <operand>  <operator> <operand>
+                                     |           |         |
+                                  <digit>        *       <digit>
+                                     |                     |
+                                     2                     3
